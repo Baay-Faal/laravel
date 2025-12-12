@@ -1,191 +1,219 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>@yield('title', 'Admin - Mediplus')</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+@extends('layouts.admin')
 
-    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+@section('title', 'Dashboard - Mediplus Admin')
+@section('page_title', 'Dashboard')
+@section('page_subtitle', 'Vue d’ensemble de votre clinique')
 
-    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
+@section('content')
 
-    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
-    
-    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  	<div class="py-1 bg-black top">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
-	    		<div class="col-lg-12 d-block">
-		    		<div class="row d-flex">
-		    			<div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-						    <span class="text">+ 1235 2355 98</span>
-					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
-					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">youremail@email.com</span>
-					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
-						    <p class="mb-0 register-link">
-                  <a href="{{ url('/') }}" class="mr-3">Retour au site</a>
-                  {{-- plus tard : lien déconnexion admin --}}
-                </p>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-		  </div>
+    {{-- KPIs principaux --}}
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3 class="h6 text-uppercase text-muted mb-2">Patients</h3>
+                <span class="d-block display-4 font-weight-bold">1 245</span>
+                <small class="text-success">+ 12% ce mois</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3 class="h6 text-uppercase text-muted mb-2">Rendez-vous à venir</h3>
+                <span class="d-block display-4 font-weight-bold">58</span>
+                <small class="text-info">24h prochaines</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3 class="h6 text-uppercase text-muted mb-2">Médecins</h3>
+                <span class="d-block display-4 font-weight-bold">18</span>
+                <small class="text-muted">Spécialités multiples</small>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-4 text-center shadow-sm">
+                <h3 class="h6 text-uppercase text-muted mb-2">Messages non lus</h3>
+                <span class="d-block display-4 font-weight-bold">7</span>
+                <small class="text-danger">À traiter rapidement</small>
+            </div>
+        </div>
     </div>
 
-    {{-- NAVBAR ADMIN --}}
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="{{ route('admin.dashboard') }}">Mediplus Admin</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link"><span>Dashboard</span></a></li>
-	          {{-- Ajoute ici d'autres liens admin plus tard --}}
-	          <li class="nav-item"><a href="{{ url('/') }}" class="nav-link"><span>Site public</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  
-	  {{-- HERO ADMIN --}}
-	  <section class="hero-wrap" style="background-image: url('{{ asset('images/bg_3.jpg') }}');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-start">
-          <div class="col-md-8 ftco-animate py-5">
-          	<div class="mt-5">
-          		<span class="subheading">Administration</span>
-	            <h1 class="mb-4">@yield('page_title', 'Tableau de bord')</h1>
-	            <p class="mb-4">@yield('page_subtitle', 'Gérez votre site Mediplus ici.')</p>
+    <div class="row">
+        {{-- Tableau des prochains rendez-vous --}}
+        <div class="col-md-8 mb-4">
+            <div class="card p-4 shadow-sm">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="h5 mb-0">Prochains rendez-vous</h3>
+                    <a href="#" class="btn btn-sm btn-primary">Voir tous</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover mb-0">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Patient</th>
+                                <th>Médecin</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Heure</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>Dr. Lloyd Wilson</td>
+                                <td>Cardiology</td>
+                                <td>2025-12-13</td>
+                                <td>10:30</td>
+                                <td><span class="badge badge-success">Confirmé</span></td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>Dr. Rachel Parker</td>
+                                <td>Ophthalmology</td>
+                                <td>2025-12-13</td>
+                                <td>11:15</td>
+                                <td><span class="badge badge-warning">En attente</span></td>
+                            </tr>
+                            <tr>
+                                <td>Paul Martin</td>
+                                <td>Dr. Ian Smith</td>
+                                <td>Dental</td>
+                                <td>2025-12-13</td>
+                                <td>14:00</td>
+                                <td><span class="badge badge-info">Reprogrammé</span></td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Lopez</td>
+                                <td>Dr. Alicia Henderson</td>
+                                <td>Pediatrics</td>
+                                <td>2025-12-14</td>
+                                <td>09:00</td>
+                                <td><span class="badge badge-secondary">Nouveau</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
 
-    {{-- CONTENU ADMIN --}}
-    <section class="ftco-section bg-light">
-      <div class="container">
-        @yield('content')
-      </div>
-    </section>
+        {{-- Actions rapides + activité récente --}}
+        <div class="col-md-4 mb-4">
+            <div class="card p-4 shadow-sm mb-4">
+                <h3 class="h6 text-uppercase text-muted mb-3">Actions rapides</h3>
+                <div class="d-flex flex-column">
+                    <a href="#" class="btn btn-primary btn-block mb-2">+ Nouveau rendez-vous</a>
+                    <a href="#" class="btn btn-outline-primary btn-block mb-2">Ajouter un patient</a>
+                    <a href="#" class="btn btn-outline-secondary btn-block">Ajouter un médecin</a>
+                </div>
+            </div>
 
-    {{-- FOOTER (identique au client) --}}
-    <footer class="ftco-footer ftco-section img" style="background-image: url('{{ asset('images/footer-bg.jpg') }}');">
-    	<div class="overlay"></div>
-      <div class="container-fluid px-md-5">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Mediplus</h2>
-              <p>Far far away, behind the word mountains, far from the countries.</p>
-              <ul class="ftco-footer-social list-unstyled mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
+            <div class="card p-4 shadow-sm">
+                <h3 class="h6 text-uppercase text-muted mb-3">Activité récente</h3>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                        <span class="badge badge-success mr-2">Rendez-vous</span>
+                        <strong>John Doe</strong> confirmé avec <strong>Dr. Wilson</strong>
+                        <br><small class="text-muted">Il y a 12 minutes</small>
+                    </li>
+                    <li class="mb-2">
+                        <span class="badge badge-info mr-2">Patient</span>
+                        <strong>Nouvelle fiche patient</strong> : Marie Dupont
+                        <br><small class="text-muted">Il y a 35 minutes</small>
+                    </li>
+                    <li class="mb-2">
+                        <span class="badge badge-warning mr-2">Message</span>
+                        Nouveau message via le formulaire de contact
+                        <br><small class="text-muted">Il y a 1 heure</small>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Departments</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Neurology</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Opthalmology</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Nuclear Magnetic</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Surgical</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Cardiology</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Dental</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="{{ url('/') }}"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Departments</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Doctors</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Blog</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Pricing</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Emergency Services</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Qualified Doctors</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Outdoors Checkup</a></li>
-                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>24 Hours Services</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-              All rights reserved | This template is made with 
-              <i class="icon-heart color-danger" aria-hidden="true"></i> by 
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            </p>
-          </div>
+    </div>
+
+    {{-- Répartition par service + messages récents --}}
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card p-4 shadow-sm">
+                <h3 class="h5 mb-3">Répartition des rendez-vous par service</h3>
+
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Cardiology</span>
+                        <span class="text-muted">40%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 40%"></div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Dental</span>
+                        <span class="text-muted">25%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Neurology</span>
+                        <span class="text-muted">20%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%"></div>
+                    </div>
+                </div>
+
+                <div class="mb-0">
+                    <div class="d-flex justify-content-between">
+                        <span>Autres</span>
+                        <span class="text-muted">15%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 15%"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </footer>
-    
-    {{-- JS --}}
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
-    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/aos.js') }}"></script>
-    <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('js/google-map.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    
-  </body>
-</html>
+
+        {{-- Messages récents --}}
+        <div class="col-md-6 mb-4">
+            <div class="card p-4 shadow-sm">
+                <h3 class="h5 mb-3">Derniers messages</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Marc Dubois</strong>  
+                                <div class="text-muted small">Demande d’informations sur la cardiologie</div>
+                            </div>
+                            <span class="badge badge-danger align-self-start">Non lu</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Claire Martin</strong>  
+                                <div class="text-muted small">Modification de rendez-vous</div>
+                            </div>
+                            <span class="badge badge-warning align-self-start">En cours</span>
+                        </div>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <strong>Ahmed Ben</strong>  
+                                <div class="text-muted small">Remerciements pour la consultation</div>
+                            </div>
+                            <span class="badge badge-success align-self-start">Traité</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+@endsection
