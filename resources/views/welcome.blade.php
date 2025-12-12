@@ -7,20 +7,21 @@
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
     
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   	<div class="py-1 bg-black top">
@@ -46,7 +47,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Mediplus</a>
+	      <a class="navbar-brand" href="/">Mediplus</a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -59,13 +60,13 @@
 	          <li class="nav-item"><a href="#doctor-section" class="nav-link"><span>Doctors</span></a></li>
 	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	          <li class="nav-item cta mr-md-2"><a href="appointment.html" class="nav-link">Appointment</a></li>
+	          <li class="nav-item cta mr-md-2"><a href="/appointment" class="nav-link">Appointment</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
 	  
-	  <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_3.jpg');" data-section="home" data-stellar-background-ratio="0.5">
+	  <section class="hero-wrap js-fullheight" style="background-image: url('{{ asset('images/bg_3.jpg') }}');" data-section="home" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
@@ -81,11 +82,12 @@
       </div>
     </section>
 
+
 		<section class="ftco-counter img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
     	<div class="container">
     		<div class="row d-flex">
     			<div class="col-md-6 col-lg-5 d-flex">
-    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.jpg);">
+    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url('{{ asset('images/about.jpg') }}');">
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-7 pl-lg-5 py-md-5">
@@ -93,7 +95,7 @@
 	    				<div class="row justify-content-start pb-3">
 			          <div class="col-md-12 heading-section ftco-animate p-4 p-lg-5">
 			            <h2 class="mb-4">We Are <span>Mediplus</span> A Medical Clinic</h2>
-			            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+			            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
 			            <p><a href="#" class="btn btn-primary py-3 px-4">Make an appointment</a> <a href="#" class="btn btn-secondary py-3 px-4">Contact us</a></p>
 			          </div>
 			        </div>
@@ -215,7 +217,7 @@
 			</div>
 		</section>
 
-    <section class="ftco-intro img" style="background-image: url(images/bg_2.jpg);">
+    <section class="ftco-intro img" style="background-image: url('{{ asset('images/bg_2.jpg') }}');">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-center">
@@ -232,7 +234,7 @@
     	<div class="container-fluid px-0">
     		<div class="row no-gutters">
     			<div class="col-md-4 d-flex">
-    				<div class="img img-dept align-self-stretch" style="background-image: url(images/dept-1.jpg);"></div>
+    				<div class="img img-dept align-self-stretch" style="background-image: url('{{ asset('images/dept-1.jpg') }}');"></div>
     			</div>
 
     			<div class="col-md-8">
@@ -344,7 +346,7 @@
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(images/doc-1.jpg);"></div>
+								<div class="img align-self-stretch" style="background-image: url('{{ asset('images/doc-1.jpg') }}');"></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3 class="mb-2">Dr. Lloyd Wilson</h3>
@@ -365,7 +367,7 @@
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(images/doc-2.jpg);"></div>
+								<div class="img align-self-stretch" style="background-image: url('{{ asset('images/doc-2.jpg') }}');"></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3 class="mb-2">Dr. Rachel Parker</h3>
@@ -386,7 +388,7 @@
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(images/doc-3.jpg);"></div>
+								<div class="img align-self-stretch" style="background-image: url('{{ asset('images/doc-3.jpg') }}');"></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3 class="mb-2">Dr. Ian Smith</h3>
@@ -407,7 +409,7 @@
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img-wrap d-flex align-items-stretch">
-								<div class="img align-self-stretch" style="background-image: url(images/doc-4.jpg);"></div>
+								<div class="img align-self-stretch" style="background-image: url('{{ asset('images/doc-4.jpg') }}');"></div>
 							</div>
 							<div class="text pt-3 text-center">
 								<h3 class="mb-2">Dr. Alicia Henderson</h3>
@@ -429,7 +431,7 @@
 			</div>
 		</section>
 
-		<section class="ftco-facts img ftco-counter" style="background-image: url(images/bg_3.jpg);">
+		<section class="ftco-facts img ftco-counter" style="background-image: url('{{ asset('images/bg_3.jpg') }}');">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row d-flex align-items-center">
@@ -490,7 +492,7 @@
         <div class="row d-flex">
           <div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_1.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -507,7 +509,7 @@
 
         	<div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_2.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -524,7 +526,7 @@
 
         	<div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_3.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -541,7 +543,7 @@
 
         	<div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_4.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -558,7 +560,7 @@
 
         	<div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_5.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -575,7 +577,7 @@
 
         	<div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/image_6.jpg') }}');">
               </a>
               <div class="text d-block">
               	<div class="meta mb-3">
@@ -593,7 +595,7 @@
       </div>
     </section>
 
-    <section class="ftco-section testimony-section img" style="background-image: url(images/bg_3.jpg);">
+    <section class="ftco-section testimony-section img" style="background-image: url('{{ asset('images/bg_3.jpg') }}');">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center pb-3">
@@ -607,7 +609,7 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url('{{ asset('images/person_1.jpg') }}')">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -621,7 +623,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img" style="background-image: url('{{ asset('images/person_2.jpg') }}')">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -635,7 +637,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url('{{ asset('images/person_3.jpg') }}')">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -649,7 +651,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url('{{ asset('images/person_1.jpg') }}')">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -663,7 +665,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url('{{ asset('images/person_3.jpg') }}')">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -756,7 +758,7 @@
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-section img" style="background-image: url(images/footer-bg.jpg);">
+    <footer class="ftco-footer ftco-section img" style="background-image: url('{{ asset('images/footer-bg.jpg') }}');">
     	<div class="overlay"></div>
       <div class="container-fluid px-md-5">
         <div class="row mb-5">
@@ -839,22 +841,22 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
+  <script src="{{ asset('js/jquery.min.js') }}"></script>
+  <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('js/popper.min.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('js/aos.js') }}"></script>
+  <script src="{{ asset('js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('js/scrollax.min.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
+  <script src="{{ asset('js/google-map.js') }}"></script>
   
-  <script src="js/main.js"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
     
   </body>
 </html>
