@@ -7,7 +7,7 @@
 @section('content')
 
     {{-- KPIs principaux --}}
-    <div class="row mb-4">
+    <!-- <div class="row mb-4">
         <div class="col-md-3">
             <div class="card p-4 text-center shadow-sm">
                 <h3 class="h6 text-uppercase text-muted mb-2">Patients</h3>
@@ -214,6 +214,17 @@
                 </ul>
             </div>
         </div>
+    </div> -->
+    <div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bienvenue sur votre tableau de bord Médecin</h5>
+                <p class="card-text">Ici, vous pouvez gérer les informations des médecin </p>  
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
-
 @endsection

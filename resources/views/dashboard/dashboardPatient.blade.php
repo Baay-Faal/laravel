@@ -8,9 +8,8 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Bienvenue sur votre tableau de bord Mediplus</h5>
-            <p class="card-text">Ici, vous pouvez gérer les informations de votre clinique
-, les rendez-vous des patients, et bien plus encore.</p>
+            <h5 class="card-title">Bienvenue sur votre tableau de bord Patient</h5>
+            <p class="card-text">Ici, vous pouvez gérer les informations , les rendez-vous des patients, et bien plus encore.</p>
             </div>
         </div>
         </div>
