@@ -6,16 +6,17 @@ use Illuminate\Http\Request;
 
 class DashbordController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $user = auth()->user();
-        if($user-> role === "admin"){
+        if($user-> role === "admin")
+            {
             return view('dashbord.admin');
         }
-        if($user-> role === "medecin"){
+        if($user-> role === "medecin")
+            {
             return view('dashbord.medecin');
         }
-        if($user-> role === "patient"){
-            return view('dashbord.patient');
-        }
+        return view('dashbord.patient');
     }
 }
